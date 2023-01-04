@@ -3,9 +3,11 @@ body {
     /* background-color: #c5d5cb; */
 }
 
+.Hide {
+    display: none;
+}
 
-
-#Player1 {
+.Player {
     width: 30em;
     height: 12em;
     background-color: #e0e3cf;
@@ -29,7 +31,7 @@ h3 {
     height: 2em;
 }
 
-#score {
+.score {
     font-size: 43px;
 }
 
@@ -85,6 +87,7 @@ h3 {
 } 
 
 
+
 /* display: inline-block;
     border-radius: 5px;
     width: 25px;
@@ -94,3 +97,109 @@ h3 {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 40px;
     font-weight: bold; */
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+#formt {
+    padding: 1em;
+    background-color: #e0e3cf;
+    border-radius: 10px;
+}
+
+#formt span {
+    font-size: 12px;
+}
+
+#formt button {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 10px;
+    width: 370px;
+
+    padding: 10px;
+    background-color: #17a6da;
+    color: white;
+}
+
+#formt input[type=number] {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    width: 350px;
+}
+
+#formt .inLine {
+    display: block;
+}
+
+#formy {
+    background-color: #e0e3cf;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#formy input[type=text] {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    width: 350px;
+}
+
+#scoreboards {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 10px;
+    width: 370px;
+
+    padding: 10px;
+    background-color: #17a6da;
+    color: white;
+}
+
+#checks {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#nameInputs {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected {
+    transition: color 1s !important;
+    transition: background-color 1s !important;
+    background-color: #5cc0e4 !important;
+    color: white;
+}
+
+.deselected {
+    transition: color 1s !important;
+    transition: background-color 1s !important;
+    background-color: white !important;
+    color: black;
+}
+
+#checks button {
+    
+    margin-top: 10px;
+    border: 0;
+    border-radius: 10px;
+    width: 180px;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 5px;
+    margin-left: 0px;
+    background-color: white;
+}
+
+

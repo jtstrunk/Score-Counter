@@ -13,54 +13,296 @@
 </head>
 <body>
     <div id="container">
-        <h1>Dominion Score counter</h1>
-
-        <div id="Player1">
-            
-
-            <div id="content"> 
-                
-                <div id="total">
-                    <h3>Josh</h3>
-                    <span id="score">3</span>
-                    <img class="resize" src="vp.png" alt="user image">
-                    <p>Total VP</p>
-                </div>
-
-                
-                <div id="stats">
-
-                    <div class="vp" id="cards">
-                        <button class="minus" id="cMinus">-</button><span id="cardAmount">10</span><button class="plus" id="cPlus">+</button>
-                        <p>Total Cards</p>
-                    </div>
-                    <div class="vp" id="estates">
-                        <button class="minus" id="eMinus">-</button><span id="estateAmount">3</span><button class="plus" id="ePlus">+</button>
-                        <p>Estates</p>
-                    </div>
-                    <div class="vp" id="duchy">
-                        <button class="minus" id="dMinus">-</button><span id="duchyAmount">0</span><button class="plus" id="dPlus">+</button>
-                        <p>Duchy</p>
-                    </div>
-                    <div class="vp" id="province">
-                        <button class="minus" id="pMinus">-</button><span id="provinceAmount">0</span><button class="plus" id="pPlus">+</button>
-                        <p>Province</p>
-                    </div>
-
-                    
+        <h1>Dominion Victory Point Counter</h1>
+        <p>Created by Joshua Strunk</p>
 
 
-                </div>
-                
-                
-            </div>
-                
-            
-            
+        <div id="formt">
+            <div>
+                <label for="playerCount">How many players are playing in this Dominion Game?</label>
+                <input type="number" id="playerCount" min="2" max="6" placeholder="Number of players" class="inLine">
+                <span>*Mininum is 2</span>&nbsp;&nbsp;&nbsp;<span>*Maxinum is 6</span>
+
+
+                <button id="formOneSubmit" class="inLine">Continue to Game Selection</button>
+            </div>                
 
         </div>
         
+        <div id="formy" class="Hide">
 
+            <div id="nameInputs">
+
+                <input type="text" id="playerOne" class="inLine Hide" placeholder="Player One Name">
+                <input type="text" id="playerTwo" class="inLine Hide" placeholder="Player Two Name">
+                <input type="text" id="playerThree" class="inLine Hide" placeholder="Player Three Name">
+                <input type="text" id="playerFour" class="inLine Hide" placeholder="Player Four Name">
+                <input type="text" id="playerFive" class="inLine Hide" placeholder="Player Five Name">
+                <input type="text" id="playerSix" class="inLine Hide" placeholder="Player Six Name">
+
+            </div>
+            
+            <div id="checks">
+                <label class="inLine" style="margin-top:5px">Select which alternate VP cards are in the Kingdom</label>
+
+                <button id="gardens" class="inLine">Gardens</button>
+
+                <button id="island" class="inLine">Island</button>
+
+                
+            </div>
+            
+
+            <button id="scoreboards">Create Scoreboards</button>
+
+        </div>
+
+        <!-- baisc outline two forms
+            form 1
+            How many players - number type
+
+            form 2
+            from that
+                Player 1 name
+                Player 2 name
+                etc ...
+                hide those based off of input of how many players
+            Check cards being played with
+            *Gardens
+            *Island
+
+        -->
+
+        
+
+
+
+        <div id="Counters" class="Hide">
+
+            
+            <div id="Player1" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player1Name"></h3>
+                        <span id="p1Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cMinus">-</button><span id="cardAmount">10</span><button class="plus" id="cPlus">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="eMinus">-</button><span id="estateAmount">3</span><button class="plus" id="ePlus">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="dMinus">-</button><span id="duchyAmount">0</span><button class="plus" id="dPlus">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="pMinus">-</button><span id="provinceAmount">0</span><button class="plus" id="pPlus">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+    
+            <br>
+    
+            <div id="Player2" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player2Name"></h3>
+                        <span id="p2Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cardMinusP2">-</button><span id="cardAmountP2">10</span><button class="plus" id="cardPlusP2">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="estaMinusP2">-</button><span id="estateAmountP2">3</span><button class="plus" id="estaPlusP2">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="duchMinusP2">-</button><span id="duchyAmountP2">0</span><button class="plus" id="duchPlusP2">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="provMinusP2">-</button><span id="provinceAmountP2">0</span><button class="plus" id="provPlusP2">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+    
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+
+            <br>
+    
+            <div id="Player3" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player3Name"></h3>
+                        <span id="p3Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cardMinusP3">-</button><span id="cardAmountP3">10</span><button class="plus" id="cardPlusP3">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="estaMinusP3">-</button><span id="estateAmountP3">3</span><button class="plus" id="estaPlusP3">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="duchMinusP3">-</button><span id="duchyAmountP3">0</span><button class="plus" id="duchPlusP3">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="provMinusP3">-</button><span id="provinceAmountP3">0</span><button class="plus" id="provPlusP3">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+    
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+
+            <br>
+    
+            <div id="Player4" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player4Name"></h3>
+                        <span id="p4Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cardMinusP4">-</button><span id="cardAmountP4">10</span><button class="plus" id="cardPlusP4">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="estaMinusP4">-</button><span id="estateAmountP4">3</span><button class="plus" id="estaPlusP4">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="duchMinusP4">-</button><span id="duchyAmountP4">0</span><button class="plus" id="duchPlusP4">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="provMinusP4">-</button><span id="provinceAmountP4">0</span><button class="plus" id="provPlusP4">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+    
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+
+            <br>
+    
+            <div id="Player5" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player5Name"></h3>
+                        <span id="p5Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cardMinusP5">-</button><span id="cardAmountP5">10</span><button class="plus" id="cardPlusP5">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="estaMinusP5">-</button><span id="estateAmountP5">3</span><button class="plus" id="estaPlusP5">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="duchMinusP5">-</button><span id="duchyAmountP5">0</span><button class="plus" id="duchPlusP5">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="provMinusP5">-</button><span id="provinceAmountP5">0</span><button class="plus" id="provPlusP5">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+    
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+            <br>
+            <div id="Player6" class="Player Hide">
+                <div id="content"> 
+                    <div id="total">
+                        <h3 id="player6Name"></h3>
+                        <span id="p6Score" class="score">3</span>
+                        <img class="resize" src="vp.png" alt="user image">
+                        <p>Total VP</p>
+                    </div>
+    
+                    <div id="stats">
+    
+                        <div class="vp" id="cards">
+                            <button class="minus" id="cardMinusP6">-</button><span id="cardAmountP6">10</span><button class="plus" id="cardPlusP6">+</button>
+                            <p>Total Cards</p>
+                        </div>
+                        <div class="vp" id="estates">
+                            <button class="minus" id="estaMinusP6">-</button><span id="estateAmountP6">3</span><button class="plus" id="estaPlusP6">+</button>
+                            <p>Estates</p>
+                        </div>
+                        <div class="vp" id="duchy">
+                            <button class="minus" id="duchMinusP6">-</button><span id="duchyAmountP6">0</span><button class="plus" id="duchPlusP6">+</button>
+                            <p>Duchy</p>
+                        </div>
+                        <div class="vp" id="province">
+                            <button class="minus" id="provMinusP6">-</button><span id="provinceAmountP6">0</span><button class="plus" id="provPlusP6">+</button>
+                            <p>Province</p>
+                        </div>
+                        
+    
+                    </div>
+                                    
+                </div>
+                    
+            </div>
+
+
+        </div>
+
+
+        
+    
     </div>
 
     
