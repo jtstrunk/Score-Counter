@@ -1,13 +1,23 @@
 body {
     background-color: white;
     /* background-color: #c5d5cb; */
+    display: flex;
+    justify-content: center;
 }
 
 .Hide {
     display: none;
 }
 
+#container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
 .Player {
+    margin: 15px;
     width: 30em;
     height: 12em;
     background-color: #e0e3cf;
@@ -20,8 +30,8 @@ h3 {
     margin-left: .8em;
 }
 
-#total {
-    width: 8em;
+.total {
+    width: 6em;
     margin-left: 1em;
     margin-right: .6em;
 }
@@ -40,9 +50,10 @@ h3 {
     flex-direction: row;
 }
 
-#stats {
-    width: 300px;
+.stats {
+    width: 330px;
     margin-left: 20px;
+    margin-top: 35px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -50,7 +61,7 @@ h3 {
 
 }
 
-#stats div {
+.stats div {
     margin: 5px;
 }
 
@@ -87,7 +98,6 @@ h3 {
 } 
 
 
-
 /* display: inline-block;
     border-radius: 5px;
     width: 25px;
@@ -104,7 +114,8 @@ form {
 }
 
 #formt {
-    padding: 1em;
+    padding: 1.5em;
+    width: 23.1em;
     background-color: #e0e3cf;
     border-radius: 10px;
 }
@@ -139,7 +150,8 @@ form {
 
 #formy {
     background-color: #e0e3cf;
-    padding: 10px;
+    padding: 1.5em;
+    width: 23.1em;
     border-radius: 10px;
 }
 
@@ -194,7 +206,7 @@ form {
     margin-top: 10px;
     border: 0;
     border-radius: 10px;
-    width: 180px;
+    width: 182.5px;
     padding: 5px;
     padding-left: 10px;
     margin: 5px;
@@ -202,4 +214,9 @@ form {
     background-color: white;
 }
 
-
+#Counters {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

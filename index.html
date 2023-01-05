@@ -13,8 +13,11 @@
 </head>
 <body>
     <div id="container">
-        <h1>Dominion Victory Point Counter</h1>
-        <p>Created by Joshua Strunk</p>
+        <div>
+            <h1>Dominion Victory Point Counter</h1>
+            <p>Created by Joshua Strunk</p>
+        </div>
+        
 
 
         <div id="formt">
@@ -82,32 +85,41 @@
             
             <div id="Player1" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player1Name"></h3>
                         <span id="p1Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
+                    <div class="stats" id="john">
     
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cMinus">-</button><span id="cardAmount">10</span><button class="plus" id="cPlus">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                        <div class="vp estates">
                             <button class="minus" id="eMinus">-</button><span id="estateAmount">3</span><button class="plus" id="ePlus">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="dMinus">-</button><span id="duchyAmount">0</span><button class="plus" id="dPlus">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="pMinus">-</button><span id="provinceAmount">0</span><button class="plus" id="pPlus">+</button>
                             <p>Province</p>
                         </div>
-                        
+                        <div class="vp island Hide">
+                            <button class="minus" id="iMinus">-</button><span id="islandAmount">0</span><button class="plus" id="iPlus">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gMinus">-</button><span id="gardensAmount">0</span><button class="plus" id="gPlus">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cMinus">-</button><span id="cardAmount">10</span><button class="plus" id="cPlus">+</button>
+                            <p>Total Cards</p>
+                        </div>
+
                     </div>
                                     
                 </div>
@@ -118,32 +130,40 @@
     
             <div id="Player2" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player2Name"></h3>
                         <span id="p2Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
-    
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cardMinusP2">-</button><span id="cardAmountP2">10</span><button class="plus" id="cardPlusP2">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                    <div class="stats">  
+                        
+                        <div class="vp estates">
                             <button class="minus" id="estaMinusP2">-</button><span id="estateAmountP2">3</span><button class="plus" id="estaPlusP2">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="duchMinusP2">-</button><span id="duchyAmountP2">0</span><button class="plus" id="duchPlusP2">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="provMinusP2">-</button><span id="provinceAmountP2">0</span><button class="plus" id="provPlusP2">+</button>
                             <p>Province</p>
                         </div>
-                        
+                        <div class="vp island Hide">
+                            <button class="minus" id="islaMinusP2">-</button><span id="islandAmountP2">0</span><button class="plus" id="islaPlusP2">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gardMinusP2">-</button><span id="gardensAmountP2">0</span><button class="plus" id="gardPlusP2">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cardMinusP2">-</button><span id="cardAmountP2">10</span><button class="plus" id="cardPlusP2">+</button>
+                            <p>Total Cards</p>
+                        </div>
     
                     </div>
                                     
@@ -155,30 +175,40 @@
     
             <div id="Player3" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player3Name"></h3>
                         <span id="p3Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
+                    <div class="stats">
     
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cardMinusP3">-</button><span id="cardAmountP3">10</span><button class="plus" id="cardPlusP3">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                        
+                        <div class="vp estates">
                             <button class="minus" id="estaMinusP3">-</button><span id="estateAmountP3">3</span><button class="plus" id="estaPlusP3">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="duchMinusP3">-</button><span id="duchyAmountP3">0</span><button class="plus" id="duchPlusP3">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="provMinusP3">-</button><span id="provinceAmountP3">0</span><button class="plus" id="provPlusP3">+</button>
                             <p>Province</p>
+                        </div>
+                        <div class="vp island Hide">
+                            <button class="minus" id="islaMinusP3">-</button><span id="islandAmountP3">0</span><button class="plus" id="islaPlusP3">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gardMinusP3">-</button><span id="gardensAmountP3">0</span><button class="plus" id="gardPlusP3">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cardMinusP3">-</button><span id="cardAmountP3">10</span><button class="plus" id="cardPlusP3">+</button>
+                            <p>Total Cards</p>
                         </div>
                         
     
@@ -192,30 +222,39 @@
     
             <div id="Player4" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player4Name"></h3>
                         <span id="p4Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
+                    <div class="stats">
     
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cardMinusP4">-</button><span id="cardAmountP4">10</span><button class="plus" id="cardPlusP4">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                        <div class="vp estates">
                             <button class="minus" id="estaMinusP4">-</button><span id="estateAmountP4">3</span><button class="plus" id="estaPlusP4">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="duchMinusP4">-</button><span id="duchyAmountP4">0</span><button class="plus" id="duchPlusP4">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="provMinusP4">-</button><span id="provinceAmountP4">0</span><button class="plus" id="provPlusP4">+</button>
                             <p>Province</p>
+                        </div>
+                        <div class="vp island Hide">
+                            <button class="minus" id="islaMinusP4">-</button><span id="islandAmountP4">0</span><button class="plus" id="islaPlusP4">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gardMinusP4">-</button><span id="gardensAmountP4">0</span><button class="plus" id="gardPlusP4">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cardMinusP4">-</button><span id="cardAmountP4">10</span><button class="plus" id="cardPlusP4">+</button>
+                            <p>Total Cards</p>
                         </div>
                         
     
@@ -229,30 +268,40 @@
     
             <div id="Player5" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player5Name"></h3>
                         <span id="p5Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
+                    <div class="stats">
     
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cardMinusP5">-</button><span id="cardAmountP5">10</span><button class="plus" id="cardPlusP5">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                        
+                        <div class="vp estates">
                             <button class="minus" id="estaMinusP5">-</button><span id="estateAmountP5">3</span><button class="plus" id="estaPlusP5">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="duchMinusP5">-</button><span id="duchyAmountP5">0</span><button class="plus" id="duchPlusP5">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="provMinusP5">-</button><span id="provinceAmountP5">0</span><button class="plus" id="provPlusP5">+</button>
                             <p>Province</p>
+                        </div>
+                        <div class="vp island Hide">
+                            <button class="minus" id="islaMinusP5">-</button><span id="islandAmountP5">0</span><button class="plus" id="islaPlusP5">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gardMinusP5">-</button><span id="gardensAmountP5">0</span><button class="plus" id="gardPlusP5">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cardMinusP5">-</button><span id="cardAmountP5">10</span><button class="plus" id="cardPlusP5">+</button>
+                            <p>Total Cards</p>
                         </div>
                         
     
@@ -264,30 +313,39 @@
             <br>
             <div id="Player6" class="Player Hide">
                 <div id="content"> 
-                    <div id="total">
+                    <div class="total">
                         <h3 id="player6Name"></h3>
                         <span id="p6Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
                         <p>Total VP</p>
                     </div>
     
-                    <div id="stats">
+                    <div class="stats">
     
-                        <div class="vp" id="cards">
-                            <button class="minus" id="cardMinusP6">-</button><span id="cardAmountP6">10</span><button class="plus" id="cardPlusP6">+</button>
-                            <p>Total Cards</p>
-                        </div>
-                        <div class="vp" id="estates">
+                        <div class="vp estates">
                             <button class="minus" id="estaMinusP6">-</button><span id="estateAmountP6">3</span><button class="plus" id="estaPlusP6">+</button>
                             <p>Estates</p>
                         </div>
-                        <div class="vp" id="duchy">
+                        <div class="vp duchy">
                             <button class="minus" id="duchMinusP6">-</button><span id="duchyAmountP6">0</span><button class="plus" id="duchPlusP6">+</button>
                             <p>Duchy</p>
                         </div>
-                        <div class="vp" id="province">
+                        <div class="vp province">
                             <button class="minus" id="provMinusP6">-</button><span id="provinceAmountP6">0</span><button class="plus" id="provPlusP6">+</button>
                             <p>Province</p>
+                        </div>
+                        <div class="vp island Hide">
+                            <button class="minus" id="islaMinusP6">-</button><span id="islandAmountP6">0</span><button class="plus" id="islaPlusP6">+</button>
+                            <p>Island</p>
+                        </div>
+                        <div class="vp gardens Hide">
+                            <button class="minus" id="gardMinusP6">-</button><span id="gardensAmountP6">0</span><button class="plus" id="gardPlusP6">+</button>
+                            <p>Gardens</p>
+                            
+                        </div>
+                        <div class="vp cards Hide">
+                            <button class="minus" id="cardMinusP6">-</button><span id="cardAmountP6">10</span><button class="plus" id="cardPlusP6">+</button>
+                            <p>Total Cards</p>
                         </div>
                         
     
@@ -296,6 +354,7 @@
                 </div>
                     
             </div>
+
 
 
         </div>
