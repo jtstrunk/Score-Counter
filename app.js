@@ -2,59 +2,108 @@
     Functionality for form 1 -- setting player number
 */
 
-let submitBtn = document.querySelector("#formOneSubmit");
-let firstForm = document.querySelector("#formy");
-let secondForm = document.querySelector("#formt");
+let gameSelection = document.querySelector("#formt");
 
-submitBtn.addEventListener('click', function submitForm1() {
-    
-    firstForm.classList.remove("Hide");
-    secondForm.classList.add("Hide");
+let selectTwo = document.querySelector("#twoPlayer");
+let selectThree = document.querySelector("#threePlayer");
+let selectFour = document.querySelector("#fourPlayer");
+let selectFive = document.querySelector("#fivePlayer");
+let selectSix = document.querySelector("#sixPlayer");
 
-    let Players = document.querySelector("#playerCount").value;
-    let numPlayers = parseInt(Players);
+let numPlayers = 0;
 
-    let nameOne = document.querySelector("#playerOne");
-    let nameTwo = document.querySelector("#playerTwo");
-    let nameThree = document.querySelector("#playerThree");
-    let nameFour = document.querySelector("#playerFour");
-    let nameFive = document.querySelector("#playerFive");
-    let nameSix = document.querySelector("#playerSix");
+function hideNames(){
+    selectTwo.classList.add("deselected");
+    selectThree.classList.add("deselected");
+    selectFour.classList.add("deselected");
+    selectFive.classList.add("deselected");
+    selectSix.classList.add("deselected");
+    selectTwo.classList.remove("selected");
+    selectThree.classList.remove("selected");
+    selectFour.classList.remove("selected");
+    selectFive.classList.remove("selected");
+    selectSix.classList.remove("selected");
+    playerOne.classList.add("Hide");
+    playerTwo.classList.add("Hide");
+    playerThree.classList.add("Hide");
+    playerFour.classList.add("Hide");
+    playerFive.classList.add("Hide");
+    playerSix.classList.add("Hide");
+    numPlayers = 0;
+}
 
-
-    if(numPlayers === 2) {
-        nameOne.classList.remove("Hide");
-        nameTwo.classList.remove("Hide");
-    } 
-    if(numPlayers === 3) {
-        nameOne.classList.remove("Hide");
-        nameTwo.classList.remove("Hide");
-        nameThree.classList.remove("Hide");
+function playerSelect(event) {
+    let btn = event.target;
+    if(!btn.classList.contains("selected")){
+        btn.classList.add("selected");
+        btn.classList.remove("deselected");
+        
+    } else {
+        btn.classList.add("deselected");
+        btn.classList.remove("selected");
     }
-    if(numPlayers === 4) {
-        nameOne.classList.remove("Hide");
-        nameTwo.classList.remove("Hide");
-        nameThree.classList.remove("Hide");
-        nameFour.classList.remove("Hide");
-    } 
-    if(numPlayers === 5) {
-        nameOne.classList.remove("Hide");
-        nameTwo.classList.remove("Hide");
-        nameThree.classList.remove("Hide");
-        nameFour.classList.remove("Hide");
-        nameFive.classList.remove("Hide");
-    } 
-    if(numPlayers === 6) {
-        nameOne.classList.remove("Hide");
-        nameTwo.classList.remove("Hide");
-        nameThree.classList.remove("Hide");
-        nameFour.classList.remove("Hide");
-        nameFive.classList.remove("Hide");
-        nameSix.classList.remove("Hide");
-    }
+}
+
+selectTwo.addEventListener('click', function(event){
+    hideNames();
+    playerSelect(event);
+    playerOne.classList.remove("Hide");
+    playerTwo.classList.remove("Hide");
+    playerThree.classList.add("Hide");
+    playerFour.classList.add("Hide");
+    playerFive.classList.add("Hide");
+    playerSix.classList.add("Hide");
+    numPlayers = 2;    
+})
+
+selectThree.addEventListener('click', function(event){
+    hideNames();
+    playerSelect(event);
+    playerOne.classList.remove("Hide");
+    playerTwo.classList.remove("Hide");
+    playerThree.classList.remove("Hide");
+    playerFour.classList.add("Hide");
+    playerFive.classList.add("Hide");
+    playerSix.classList.add("Hide");
+    numPlayers = 3;
+})
+
+selectFour.addEventListener('click', function(event){
+    hideNames();
+    playerSelect(event);
+    playerOne.classList.remove("Hide");
+    playerTwo.classList.remove("Hide");
+    playerThree.classList.remove("Hide");
+    playerFour.classList.remove("Hide");
+    playerFive.classList.add("Hide");
+    playerSix.classList.add("Hide");
+    numPlayers = 4;
     
 })
 
+selectFive.addEventListener('click', function(event){
+    hideNames();
+    playerSelect(event);
+    playerOne.classList.remove("Hide");
+    playerTwo.classList.remove("Hide");
+    playerThree.classList.remove("Hide");
+    playerFour.classList.remove("Hide");
+    playerFive.classList.remove("Hide");
+    playerSix.classList.add("Hide");
+    numPlayers = 5;
+})
+
+selectSix.addEventListener('click', function(event){
+    hideNames();
+    playerSelect(event);
+    playerOne.classList.remove("Hide");
+    playerTwo.classList.remove("Hide");
+    playerThree.classList.remove("Hide");
+    playerFour.classList.remove("Hide");
+    playerFive.classList.remove("Hide");
+    playerSix.classList.remove("Hide");
+    numPlayers = 6;
+})
 
 let gardensBTN = document.querySelector("#gardens");
 let islandBTN = document.querySelector("#island");
@@ -151,24 +200,20 @@ player6Name = document.querySelector("#player6Name");
 
 
 scoreBoardsBTN.addEventListener('click', function(){
-    firstForm.classList.add("Hide");
+    gameSelection.classList.add("Hide");
     count.classList.remove("Hide");
-    let Players = document.querySelector("#playerCount").value
-    let numPlayers = parseInt(Players);
+
     if(Ichecker === true && Gchecker === false) {
         stats.forEach(stats => {
         stats.style.width = '300px';
         });
     }
 
-
     if(numPlayers === 2) {
         player1Name.textContent = document.querySelector("#playerOne").value;
         player2Name.textContent = document.querySelector("#playerTwo").value;
         player1.classList.remove("Hide");
         player2.classList.remove("Hide");
-
-        
     } 
     if(numPlayers === 3) {
         player1Name.textContent = document.querySelector("#playerOne").value;
@@ -215,12 +260,8 @@ scoreBoardsBTN.addEventListener('click', function(){
         player6.classList.remove("Hide");  
     }
 
-    if(Ichecker === true) {
-
-    }
-
-
 })
+
 /*
     The break to functions
 */
@@ -327,7 +368,6 @@ iPlus.addEventListener('click', function(){
     island = plusNum(island, startIslandAmount);
     calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
 })
-
 
 /* 
     The break to player two functionality

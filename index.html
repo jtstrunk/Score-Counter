@@ -13,35 +13,32 @@
 </head>
 <body>
     <div id="container">
-        <div>
+        <div id="title">
             <h1>Dominion Victory Point Counter</h1>
             <p>Created by Joshua Strunk</p>
         </div>
-        
-
 
         <div id="formt">
             <div>
                 <label for="playerCount">How many players are playing in this Dominion Game?</label>
-                <input type="number" id="playerCount" min="2" max="6" placeholder="Number of players" class="inLine">
-                <span>*Mininum is 2</span>&nbsp;&nbsp;&nbsp;<span>*Maxinum is 6</span>
+                <button id="twoPlayer" class="topRow">Two</button>
+                <button id="threePlayer" class="topRow">Three</button>
+                <button id="fourPlayer" class="bottom">Four</button>
+                <button id="fivePlayer" class="bottom">Five</button>
+                <button id="sixPlayer" class="bottom">Six</button>
 
 
-                <button id="formOneSubmit" class="inLine">Continue to Game Selection</button>
-            </div>                
-
-        </div>
-        
-        <div id="formy" class="Hide">
-
+                <!-- <button id="formOneSubmit" class="inLine">Continue to Game Selection</button> -->
+            </div>
+            
             <div id="nameInputs">
 
-                <input type="text" id="playerOne" class="inLine Hide" placeholder="Player One Name">
-                <input type="text" id="playerTwo" class="inLine Hide" placeholder="Player Two Name">
-                <input type="text" id="playerThree" class="inLine Hide" placeholder="Player Three Name">
-                <input type="text" id="playerFour" class="inLine Hide" placeholder="Player Four Name">
-                <input type="text" id="playerFive" class="inLine Hide" placeholder="Player Five Name">
-                <input type="text" id="playerSix" class="inLine Hide" placeholder="Player Six Name">
+                <input type="text" id="playerOne" class="Hide" placeholder="Player One Name">
+                <input type="text" id="playerTwo" class="Hide" placeholder="Player Two Name">
+                <input type="text" id="playerThree" class="Hide" placeholder="Player Three Name">
+                <input type="text" id="playerFour" class="Hide" placeholder="Player Four Name">
+                <input type="text" id="playerFive" class="Hide" placeholder="Player Five Name">
+                <input type="text" id="playerSix" class="Hide" placeholder="Player Six Name">
 
             </div>
             
@@ -55,33 +52,11 @@
                 
             </div>
             
-
             <button id="scoreboards">Create Scoreboards</button>
 
         </div>
-
-        <!-- baisc outline two forms
-            form 1
-            How many players - number type
-
-            form 2
-            from that
-                Player 1 name
-                Player 2 name
-                etc ...
-                hide those based off of input of how many players
-            Check cards being played with
-            *Gardens
-            *Island
-
-        -->
-
-        
-
-
-
+     
         <div id="Counters" class="Hide">
-
             
             <div id="Player1" class="Player Hide">
                 <div id="content"> 
