@@ -1,5 +1,4 @@
 /* 
-    Functionality for form 1 -- setting player number
 */
 
 let gameSelection = document.querySelector("#formt");
@@ -107,13 +106,16 @@ selectSix.addEventListener('click', function(event){
 
 let gardensBTN = document.querySelector("#gardens");
 let islandBTN = document.querySelector("#island");
+let cuseBTN = document.querySelector("#curse");
 let Gchecker = false;
 let Ichecker = false;
+let Checker = false;
 const stats = document.querySelectorAll('.stats');
 const total = document.querySelectorAll('.total');
 const gard = document.querySelectorAll('.gardens');
 const card = document.querySelectorAll('.cards');
 const isla = document.querySelectorAll('.island');
+const curs = document.querySelectorAll('.curse');
 
 gardensBTN.addEventListener('click', function(){
     if (Gchecker === false) {
@@ -145,7 +147,7 @@ gardensBTN.addEventListener('click', function(){
 
     });
     total.forEach(total => {
-        total.style.width = '4em';
+        total.style.width = '5em';
     })
     
 
@@ -180,6 +182,8 @@ islandBTN.addEventListener('click', function(){
 
 })
 
+
+
 let scoreBoardsBTN = document.querySelector("#scoreboards");
 let count = document.querySelector("#Counters");
 
@@ -190,14 +194,12 @@ let player4 = document.querySelector("#Player4");
 let player5 = document.querySelector("#Player5");
 let player6 = document.querySelector("#Player6");
 
-
-player1Name = document.querySelector("#player1Name");
-player2Name = document.querySelector("#player2Name");
-player3Name = document.querySelector("#player3Name");
-player4Name = document.querySelector("#player4Name");
-player5Name = document.querySelector("#player5Name");
-player6Name = document.querySelector("#player6Name");
-
+let player1Name = document.querySelector("#player1Name");
+let player2Name = document.querySelector("#player2Name");
+let player3Name = document.querySelector("#player3Name");
+let player4Name = document.querySelector("#player4Name");
+let player5Name = document.querySelector("#player5Name");
+let player6Name = document.querySelector("#player6Name");
 
 scoreBoardsBTN.addEventListener('click', function(){
     gameSelection.classList.add("Hide");
@@ -277,12 +279,12 @@ function plusNum(vari, changing) {
     return vari;
 }
 
-function calcScore(score, estate, duchy, province, gardens, cards, island, fscore) {
-    score = (estate * 1) + (duchy * 3) + (province * 6) + (gardens * Math.floor(cards / 10)) + (island * 2);
+function calcScore(score, estate, duchy, province, gardens, cards, island, curse, fscore) {
+    score = estate + (duchy * 3) + (province * 6) + (gardens * Math.floor(cards / 10)) + (island * 2) - curse;
     fscore.textContent = score;
 }
 
-let cards = 10, score = 0, estate = 3, duchy = 0, province = 0, island = 0, gardens = 0;
+let cards = 10, score = 0, estate = 3, duchy = 0, province = 0, island = 0, gardens = 0, curse = 0;
 let p1Score = document.querySelector("#p1Score");
 
 let eMinus = document.querySelector("#eMinus");
@@ -291,12 +293,12 @@ let startEstatesAmount = document.querySelector("#estateAmount");
 
 eMinus.addEventListener('click', function(){
     estate = minusNum(estate, startEstatesAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 ePlus.addEventListener('click', function(){
     estate = plusNum(estate, startEstatesAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 let dMinus = document.querySelector("#dMinus");
@@ -305,12 +307,12 @@ let startDuchyAmount = document.querySelector("#duchyAmount");
 
 dMinus.addEventListener('click', function(){
     duchy = minusNum(duchy, startDuchyAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 dPlus.addEventListener('click', function(){
     duchy = plusNum(duchy, startDuchyAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 let pMinus = document.querySelector("#pMinus");
@@ -319,12 +321,12 @@ let startProvinceAmount = document.querySelector("#provinceAmount");
 
 pMinus.addEventListener('click', function(){
     province = minusNum(province, startProvinceAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 pPlus.addEventListener('click', function(){
     province = plusNum(province, startProvinceAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 let gMinus = document.querySelector("#gMinus");
@@ -333,26 +335,26 @@ let startGardensAmount = document.querySelector("#gardensAmount");
 
 gMinus.addEventListener('click', function(){
     gardens = minusNum(gardens, startGardensAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 gPlus.addEventListener('click', function(){
     gardens = plusNum(gardens, startGardensAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
-let cMinus = document.querySelector("#cMinus");
-let cPlus = document.querySelector("#cPlus");
+let caMinus = document.querySelector("#caMinus");
+let caPlus = document.querySelector("#caPlus");
 let startcardsAmount = document.querySelector("#cardAmount");
 
-cMinus.addEventListener('click', function(){
+caMinus.addEventListener('click', function(){
     cards = minusNum(cards, startcardsAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
-cPlus.addEventListener('click', function(){
+caPlus.addEventListener('click', function(){
     cards = plusNum(cards, startcardsAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 let iMinus = document.querySelector("#iMinus");
@@ -361,19 +363,33 @@ let startIslandAmount = document.querySelector("#islandAmount");
 
 iMinus.addEventListener('click', function(){
     island = minusNum(island, startIslandAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 iPlus.addEventListener('click', function(){
     island = plusNum(island, startIslandAmount);
-    calcScore(score, estate, duchy, province, gardens, cards, island, p1Score);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
+})
+
+let cuMinus = document.querySelector("#cuMinus");
+let cuPlus = document.querySelector("#cuPlus");
+let startcurseAmount = document.querySelector("#curseAmount");
+
+cuMinus.addEventListener('click', function(){
+    curse = minusNum(curse, startcurseAmount);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
+})
+
+cuPlus.addEventListener('click', function(){
+    curse = plusNum(curse, startcurseAmount);
+    calcScore(score, estate, duchy, province, gardens, cards, island, curse, p1Score);
 })
 
 /* 
     The break to player two functionality
 */
 
-let cardsP2 = 10, scoreP2 = 0, estateP2 = 3, duchyP2 = 0, provinceP2 = 0, gardensP2 = 0, islandP2 = 0;
+let cardsP2 = 10, scoreP2 = 0, estateP2 = 3, duchyP2 = 0, provinceP2 = 0, gardensP2 = 0, islandP2 = 0, curseP2 = 0;
 let p2Score = document.querySelector("#p2Score");
 
 let estaMinusP2 = document.querySelector("#estaMinusP2");
@@ -382,12 +398,12 @@ let startEstatesAmountP2 = document.querySelector("#estateAmountP2");
 
 estaMinusP2.addEventListener('click', function(){
     estateP2 = minusNum(estateP2, startEstatesAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 estaPlusP2.addEventListener('click', function(){
     estateP2 = plusNum(estateP2, startEstatesAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 let duchMinusP2 = document.querySelector("#duchMinusP2");
@@ -396,12 +412,12 @@ let startDuchyAmountP2 = document.querySelector("#duchyAmountP2");
 
 duchMinusP2.addEventListener('click', function(){
     duchyP2 = minusNum(duchyP2, startDuchyAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 duchPlusP2.addEventListener('click', function(){
     duchyP2 = plusNum(duchyP2, startDuchyAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 let provMinusP2 = document.querySelector("#provMinusP2");
@@ -410,12 +426,12 @@ let startProvinceAmountP2 = document.querySelector("#provinceAmountP2");
 
 provMinusP2.addEventListener('click', function(){
     provinceP2 = minusNum(provinceP2, startProvinceAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 provPlusP2.addEventListener('click', function(){
     provinceP2 = plusNum(provinceP2, startProvinceAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 let gardMinusP2 = document.querySelector("#gardMinusP2");
@@ -424,12 +440,12 @@ let startGardensAmountP2 = document.querySelector("#gardensAmountP2");
 
 gardMinusP2.addEventListener('click', function(){
     gardensP2 = minusNum(gardensP2, startGardensAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 gardPlusP2.addEventListener('click', function(){
     gardensP2 = plusNum(gardensP2, startGardensAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 let islaMinusP2 = document.querySelector("#islaMinusP2");
@@ -438,12 +454,12 @@ let startIslandAmountP2 = document.querySelector("#islandAmountP2");
 
 islaMinusP2.addEventListener('click', function(){
     islandP2 = minusNum(islandP2, startIslandAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 islaPlusP2.addEventListener('click', function(){
     islandP2 = plusNum(islandP2, startIslandAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 let cardMinusP2 = document.querySelector("#cardMinusP2");
@@ -452,19 +468,33 @@ let startcardsAmountP2 = document.querySelector("#cardAmountP2");
 
 cardMinusP2.addEventListener('click', function(){
     cardsP2 = minusNum(cardsP2, startcardsAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 cardPlusP2.addEventListener('click', function(){
     cardsP2 = plusNum(cardsP2, startcardsAmountP2);
-    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, p2Score);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
+})
+
+let cuMinusP2 = document.querySelector("#cuMinusP2");
+let cuPlusP2 = document.querySelector("#cuPlusP2");
+let startcurseAmountP2 = document.querySelector("#curseAmountP2");
+
+cuMinusP2.addEventListener('click', function(){
+    curseP2 = minusNum(curseP2, startcurseAmountP2);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
+})
+
+cuPlusP2.addEventListener('click', function(){
+    curseP2 = plusNum(curseP2, startcurseAmountP2);
+    calcScore(scoreP2, estateP2, duchyP2, provinceP2, gardensP2, cardsP2, islandP2, curseP2, p2Score);
 })
 
 /* 
     The break to player three functionality
 */
 
-let cardsP3 = 10, scoreP3 = 0, estateP3 = 3, duchyP3 = 0, provinceP3 = 0, gardensP3 = 0, islandP3 = 0;
+let cardsP3 = 10, scoreP3 = 0, estateP3 = 3, duchyP3 = 0, provinceP3 = 0, gardensP3 = 0, curseP3 = 0, islandP3 = 0;
 let p3Score = document.querySelector("#p3Score");
 
 let estaMinusP3 = document.querySelector("#estaMinusP3");
@@ -473,12 +503,12 @@ let startEstatesAmountP3 = document.querySelector("#estateAmountP3");
 
 estaMinusP3.addEventListener('click', function(){
     estateP3 = minusNum(estateP3, startEstatesAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 estaPlusP3.addEventListener('click', function(){
     estateP3 = plusNum(estateP3, startEstatesAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 let duchMinusP3 = document.querySelector("#duchMinusP3");
@@ -487,12 +517,12 @@ let startDuchyAmountP3 = document.querySelector("#duchyAmountP3");
 
 duchMinusP3.addEventListener('click', function(){
     duchyP3 = minusNum(duchyP3, startDuchyAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 duchPlusP3.addEventListener('click', function(){
     duchyP3 = plusNum(duchyP3, startDuchyAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 let provMinusP3 = document.querySelector("#provMinusP3");
@@ -501,12 +531,12 @@ let startProvinceAmountP3 = document.querySelector("#provinceAmountP3");
 
 provMinusP3.addEventListener('click', function(){
     provinceP3 = minusNum(provinceP3, startProvinceAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 provPlusP3.addEventListener('click', function(){
     provinceP3 = plusNum(provinceP3, startProvinceAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 let gardMinusP3 = document.querySelector("#gardMinusP3");
@@ -515,12 +545,12 @@ let startGardensAmountP3 = document.querySelector("#gardensAmountP3");
 
 gardMinusP3.addEventListener('click', function(){
     gardensP3 = minusNum(gardensP3, startGardensAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 gardPlusP3.addEventListener('click', function(){
     gardensP3 = plusNum(gardensP3, startGardensAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 let islaMinusP3 = document.querySelector("#islaMinusP3");
@@ -529,12 +559,12 @@ let startIslandAmountP3 = document.querySelector("#islandAmountP3");
 
 islaMinusP3.addEventListener('click', function(){
     islandP3 = minusNum(islandP3, startIslandAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 islaPlusP3.addEventListener('click', function(){
     islandP3 = plusNum(islandP3, startIslandAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 let cardMinusP3 = document.querySelector("#cardMinusP3");
@@ -543,19 +573,33 @@ let startcardsAmountP3 = document.querySelector("#cardAmountP3");
 
 cardMinusP3.addEventListener('click', function(){
     cardsP3 = minusNum(cardsP3, startcardsAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 cardPlusP3.addEventListener('click', function(){
     cardsP3 = plusNum(cardsP3, startcardsAmountP3);
-    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, p3Score);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
+})
+
+let cuMinusP3 = document.querySelector("#cuMinusP3");
+let cuPlusP3 = document.querySelector("#cuPlusP3");
+let startcurseAmountP3 = document.querySelector("#curseAmountP3");
+
+cuMinusP3.addEventListener('click', function(){
+    curseP3 = minusNum(curseP3, startcurseAmountP3);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
+})
+
+cuPlusP3.addEventListener('click', function(){
+    curseP3 = plusNum(curseP3, startcurseAmountP3);
+    calcScore(scoreP3, estateP3, duchyP3, provinceP3, gardensP3, cardsP3, islandP3, curseP3, p3Score);
 })
 
 /* 
     The break to player four functionality
 */
 
-let cardsP4 = 10, scoreP4 = 0, estateP4 = 3, duchyP4 = 0, provinceP4 = 0, gardensP4 = 0, islandP4 = 0;
+let cardsP4 = 10, scoreP4 = 0, estateP4 = 3, duchyP4 = 0, provinceP4 = 0, gardensP4 = 0, curseP4 = 0, islandP4 = 0;
 let p4Score = document.querySelector("#p4Score");
 
 let estaMinusP4 = document.querySelector("#estaMinusP4");
@@ -564,12 +608,12 @@ let startEstatesAmountP4 = document.querySelector("#estateAmountP4");
 
 estaMinusP4.addEventListener('click', function(){
     estateP4 = minusNum(estateP4, startEstatesAmountP4);
-    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, p4Score);
+    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, curseP4, p4Score);
 })
 
 estaPlusP4.addEventListener('click', function(){
     estateP4 = plusNum(estateP4, startEstatesAmountP4);
-    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, p4Score);
+    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, curseP4, p4Score);
 })
 
 let duchMinusP4 = document.querySelector("#duchMinusP4");
@@ -640,6 +684,20 @@ cardMinusP4.addEventListener('click', function(){
 cardPlusP4.addEventListener('click', function(){
     cardsP4 = plusNum(cardsP4, startcardsAmountP4);
     calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, p4Score);
+})
+
+let cuMinusP4 = document.querySelector("#cuMinusP4");
+let cuPlusP4 = document.querySelector("#cuPlusP4");
+let startcurseAmountP4 = document.querySelector("#curseAmountP4");
+
+cuMinusP4.addEventListener('click', function(){
+    curseP4 = minusNum(curseP4, startcurseAmountP4);
+    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, curseP4, p4Score);
+})
+
+cuPlusP4.addEventListener('click', function(){
+    curseP4 = plusNum(curseP4, startcurseAmountP4);
+    calcScore(scoreP4, estateP4, duchyP4, provinceP4, gardensP4, cardsP4, islandP4, curseP4, p4Score);
 })
 
 /* 

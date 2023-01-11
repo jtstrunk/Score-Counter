@@ -48,7 +48,6 @@
                 <button id="gardens" class="inLine">Gardens</button>
 
                 <button id="island" class="inLine">Island</button>
-
                 
             </div>
             
@@ -60,14 +59,19 @@
             
             <div id="Player1" class="Player Hide">
                 <div id="content"> 
-                    <div class="total">
+                    <div class="total" style="width: 5em;">
                         <h3 id="player1Name"></h3>
                         <span id="p1Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinus">-</button><span id="curseAmount">0</span><button class="plus" id="cuPlus">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
-                    <div class="stats" id="john">
+                    <div class="stats">
     
                         <div class="vp estates">
                             <button class="minus" id="eMinus">-</button><span id="estateAmount">3</span><button class="plus" id="ePlus">+</button>
@@ -91,8 +95,12 @@
                             
                         </div>
                         <div class="vp cards Hide">
-                            <button class="minus" id="cMinus">-</button><span id="cardAmount">10</span><button class="plus" id="cPlus">+</button>
+                            <button class="minus" id="caMinus">-</button><span id="cardAmount">10</span><button class="plus" id="caPlus">+</button>
                             <p>Total Cards</p>
+                        </div>
+                        <div class="vp curse Hide">
+                            <button class="minus" id="cuMinus">-</button><span id="curseAmount">0</span><button class="plus" id="cuPlus">+</button>
+                            <p>Curse</p>
                         </div>
 
                     </div>
@@ -109,7 +117,11 @@
                         <h3 id="player2Name"></h3>
                         <span id="p2Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinusP2">-</button><span id="curseAmountP2">0</span><button class="plus" id="cuPlusP2">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
                     <div class="stats">  
@@ -154,7 +166,11 @@
                         <h3 id="player3Name"></h3>
                         <span id="p3Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinusP3">-</button><span id="curseAmountP3">0</span><button class="plus" id="cuPlusP3">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
                     <div class="stats">
@@ -184,8 +200,7 @@
                         <div class="vp cards Hide">
                             <button class="minus" id="cardMinusP3">-</button><span id="cardAmountP3">10</span><button class="plus" id="cardPlusP3">+</button>
                             <p>Total Cards</p>
-                        </div>
-                        
+                        </div>                     
     
                     </div>
                                     
@@ -201,7 +216,11 @@
                         <h3 id="player4Name"></h3>
                         <span id="p4Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinusP4">-</button><span id="curseAmountP4">0</span><button class="plus" id="cuPlusP4">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
                     <div class="stats">
@@ -247,12 +266,15 @@
                         <h3 id="player5Name"></h3>
                         <span id="p5Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinusP5">-</button><span id="curseAmountP5">0</span><button class="plus" id="cuPlusP5">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
                     <div class="stats">
     
-                        
                         <div class="vp estates">
                             <button class="minus" id="estaMinusP5">-</button><span id="estateAmountP5">3</span><button class="plus" id="estaPlusP5">+</button>
                             <p>Estates</p>
@@ -292,7 +314,11 @@
                         <h3 id="player6Name"></h3>
                         <span id="p6Score" class="score">3</span>
                         <img class="resize" src="vp.png" alt="user image">
-                        <p>Total VP</p>
+                        <div class="vp curse">
+                            <button class="minus" id="cuMinusP6">-</button><span id="curseAmountP6">0</span><button class="plus" id="cuPlusP6">+</button>
+                            <p>Curse</p>
+                        </div>
+                        
                     </div>
     
                     <div class="stats">
@@ -322,7 +348,6 @@
                             <button class="minus" id="cardMinusP6">-</button><span id="cardAmountP6">10</span><button class="plus" id="cardPlusP6">+</button>
                             <p>Total Cards</p>
                         </div>
-                        
     
                     </div>
                                     

@@ -27,7 +27,7 @@ body {
 h3 {
     margin-top: .6em;
     margin-bottom: .6em;
-    margin-left: .8em;
+    /*margin-left: .8em;  */
 }
 
 .total {
@@ -117,7 +117,7 @@ form {
     margin-top: 5px;
     border: 0;
     border-radius: 10px;
-    width: 180px;
+    width: 182px;
     padding: 10px;
     background-color: white;
 }
@@ -209,6 +209,8 @@ form {
     color: black;
 }
 
+
+
 #checks button {
     margin-top: 10px;
     border: 0;
@@ -217,8 +219,13 @@ form {
     padding: 5px;
     padding-left: 10px;
     margin: 5px;
+    margin-bottom: 0px;
     margin-left: 0px;
     background-color: white;
+}
+
+#checks .odd {
+    width: 370px;
 }
 
 #Counters {
