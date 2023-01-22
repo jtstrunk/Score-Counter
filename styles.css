@@ -5,6 +5,15 @@ body {
     justify-content: center;
 }
 
+#title {
+    margin: 0px;
+    font-size: 1.8em;
+}
+
+#creator {
+    margin: 8px;
+}
+
 .Hide {
     display: none;
 }
@@ -22,6 +31,7 @@ body {
     height: 12em;
     background-color: #e0e3cf;
     border-radius: 10px;
+    margin-bottom: 0px;
 }
 
 h3 {

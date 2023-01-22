@@ -200,9 +200,11 @@ let player3Name = document.querySelector("#player3Name");
 let player4Name = document.querySelector("#player4Name");
 let player5Name = document.querySelector("#player5Name");
 let player6Name = document.querySelector("#player6Name");
+let header = document.querySelector("#header");
 
 scoreBoardsBTN.addEventListener('click', function(){
     gameSelection.classList.add("Hide");
+    header.classList.add("Hide");
     count.classList.remove("Hide");
 
     if(Ichecker === true && Gchecker === false) {
